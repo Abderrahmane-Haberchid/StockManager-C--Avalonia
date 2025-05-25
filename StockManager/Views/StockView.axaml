@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:StockManager.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="viewModels:StockViewModel"
+             x:Class="StockManager.Views.StockView">
+    
+    <Design.DataContext>
+            <viewModels:StockViewModel/>
+    </Design.DataContext>
+    
+      <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+          <TextBlock Text="{Binding Products.Count, StringFormat='Produits ({0})'}"
+                     FontSize="20"
+                     FontWeight="Bold"
+                     Margin="0 20"/>
+          
+          <DataGrid Margin="20" ItemsSource="{Binding Products}" 
+                    AutoGenerateColumns="True" IsReadOnly="false" 
+                    GridLinesVisibility="All"
+                    BorderThickness="1" BorderBrush="Gray">
+          </DataGrid>
+      </StackPanel>  
+    
+</UserControl>

@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:StockManager.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="StockManager.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="StockManager">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <SplitView Background="#1e1e1e"
+               IsPaneOpen="{Binding IsPaneOpen}"
+               OpenPaneLength="200"
+               CompactPaneLength="50"
+               DisplayMode="CompactInline"
+               PaneBackground="#1e1e1e"
+               >
+        <SplitView.Pane>
+            <StackPanel>
+                <Button Content="Menu" Command="{Binding OnIsPaneOpenChanged}" />
+                 
+                    <ListBox ItemsSource="{Binding ListItemTemplates}" 
+                             SelectedItem="{Binding SelectedListItem}">
+                         <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type vm:ListItemTemplate}">
+                                <StackPanel Spacing="30" Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Label}" />
+                                </StackPanel>
+                            </DataTemplate>  
+                             
+                         </ListBox.ItemTemplate>
+                    </ListBox>
+                <Button Content="Quitter" CornerRadius="15" VerticalAlignment="Bottom" />            
+            </StackPanel>
+            
+        </SplitView.Pane>
+        
+        <SplitView.Content>
+            
+            <Border CornerRadius="12 0 0 0">
+                <TransitioningContentControl Content="{Binding CurrentViewModel}" />
+            </Border>
+            
+        </SplitView.Content>
+    </SplitView>
+</Window>
