@@ -14,6 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Avalonia.Xaml.Interactivity" Version="11.3.0" />
+        <PackageReference Include="Avalonia.Xaml.Interactions" Version="11.3.0" />
         <PackageReference Include="Avalonia" Version="11.3.0"/>
         <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.0" />
         <PackageReference Include="Avalonia.Desktop" Version="11.3.0"/>
@@ -25,6 +27,7 @@
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1"/>
+        <PackageReference Include="CsvHelper" Version="33.0.1" />
         <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="9.0.8" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     </ItemGroup>

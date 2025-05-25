@@ -14,7 +14,10 @@
           "Avalonia.Diagnostics": "11.3.0",
           "Avalonia.Fonts.Inter": "11.3.0",
           "Avalonia.Themes.Fluent": "11.3.0",
+          "Avalonia.Xaml.Interactions": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0",
           "CommunityToolkit.Mvvm": "8.2.1",
+          "CsvHelper": "33.0.1",
           "LinqKit.Microsoft.EntityFrameworkCore": "9.0.8",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
         },
@@ -263,11 +266,42 @@
           }
         }
       },
+      "Avalonia.Xaml.Interactions/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactions.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
+      "Avalonia.Xaml.Interactivity/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactivity.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
       "CommunityToolkit.Mvvm/8.2.1": {
         "runtime": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
             "assemblyVersion": "8.2.0.0",
             "fileVersion": "8.2.1.1"
+          }
+        }
+      },
+      "CsvHelper/33.0.1": {
+        "runtime": {
+          "lib/net8.0/CsvHelper.dll": {
+            "assemblyVersion": "33.0.0.0",
+            "fileVersion": "33.0.1.24"
           }
         }
       },
@@ -728,12 +762,33 @@
       "path": "avalonia.x11/11.3.0",
       "hashPath": "avalonia.x11.11.3.0.nupkg.sha512"
     },
+    "Avalonia.Xaml.Interactions/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OhqS2kjHPytoL8zuXxmH15/xfrgOxtyT+hxxDHkR54fc2HE50349E+H1UsAnbUe7ZxKG9jt+5ddCyCmS4Oh7NQ==",
+      "path": "avalonia.xaml.interactions/11.3.0",
+      "hashPath": "avalonia.xaml.interactions.11.3.0.nupkg.sha512"
+    },
+    "Avalonia.Xaml.Interactivity/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-abRbQqRC4Bts7Sw0vSSdCL7P0tbz0PZSZiFC0OvIooRmfan93IQutHvk3V0dhj/WB5lFhIT/DxgMDUN6RzIn7w==",
+      "path": "avalonia.xaml.interactivity/11.3.0",
+      "hashPath": "avalonia.xaml.interactivity.11.3.0.nupkg.sha512"
+    },
     "CommunityToolkit.Mvvm/8.2.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-I24ofWVEdplxYjUez9/bljv/qb8r8Ccj6cvYXHexNBegLaD3iDy3QrzAAOYVMmfGWIXxlU1ZtECQNfU07+6hXQ==",
       "path": "communitytoolkit.mvvm/8.2.1",
       "hashPath": "communitytoolkit.mvvm.8.2.1.nupkg.sha512"
+    },
+    "CsvHelper/33.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fev4lynklAU2A9GVMLtwarkwaanjSYB4wUqO2nOJX5hnzObORzUqVLe+bDYCUyIIRQM4o5Bsq3CcyJR89iMmEQ==",
+      "path": "csvhelper/33.0.1",
+      "hashPath": "csvhelper.33.0.1.nupkg.sha512"
     },
     "HarfBuzzSharp/7.3.0.3": {
       "type": "package",

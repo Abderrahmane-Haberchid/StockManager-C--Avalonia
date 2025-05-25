@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "phH5ApM4FOc=",
+  "dgSpecHash": "tnyUV7ebr14=",
   "success": true,
   "projectFilePath": "/Users/abderahman/RiderProjects/StockManager/StockManager/StockManager.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,10 @@
     "/Users/abderahman/.nuget/packages/avalonia.themes.simple/11.3.0/avalonia.themes.simple.11.3.0.nupkg.sha512",
     "/Users/abderahman/.nuget/packages/avalonia.win32/11.3.0/avalonia.win32.11.3.0.nupkg.sha512",
     "/Users/abderahman/.nuget/packages/avalonia.x11/11.3.0/avalonia.x11.11.3.0.nupkg.sha512",
+    "/Users/abderahman/.nuget/packages/avalonia.xaml.interactions/11.3.0/avalonia.xaml.interactions.11.3.0.nupkg.sha512",
+    "/Users/abderahman/.nuget/packages/avalonia.xaml.interactivity/11.3.0/avalonia.xaml.interactivity.11.3.0.nupkg.sha512",
     "/Users/abderahman/.nuget/packages/communitytoolkit.mvvm/8.2.1/communitytoolkit.mvvm.8.2.1.nupkg.sha512",
+    "/Users/abderahman/.nuget/packages/csvhelper/33.0.1/csvhelper.33.0.1.nupkg.sha512",
     "/Users/abderahman/.nuget/packages/harfbuzzsharp/7.3.0.3/harfbuzzsharp.7.3.0.3.nupkg.sha512",
     "/Users/abderahman/.nuget/packages/harfbuzzsharp.nativeassets.linux/7.3.0.3/harfbuzzsharp.nativeassets.linux.7.3.0.3.nupkg.sha512",
     "/Users/abderahman/.nuget/packages/harfbuzzsharp.nativeassets.macos/7.3.0.3/harfbuzzsharp.nativeassets.macos.7.3.0.3.nupkg.sha512",

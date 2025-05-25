@@ -3,7 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:StockManager.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:i="using:Avalonia.Xaml.Interactivity"         
+             xmlns:core="using:Avalonia.Xaml.Interactions.Core"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="350"
              x:DataType="viewModels:StockViewModel"
              x:Class="StockManager.Views.StockView">
     
@@ -12,19 +14,30 @@
     </Design.DataContext>
     
       <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+          <StackPanel Orientation="Horizontal" Margin="0 20" HorizontalAlignment="Center" Spacing="50"> 
+              <TextBlock Text="{Binding Products.Count, StringFormat='Produits ({0})'}"
+                         FontSize="20"
+                         FontWeight="Bold"
+                         Margin="0 20"/>
           
-          <TextBlock Text="{Binding Products.Count, StringFormat='Produits ({0})'}"
-                     FontSize="20"
-                     FontWeight="Bold"
-                     Margin="0 20"/>
+              <Button Content="Export to CSV" Foreground="DarkCyan" FontSize="15" FontWeight="DemiBold" Command="{Binding ExportToCSVCommand}" />
+              <TextBlock Text="Data Exported..." Foreground="Green" IsVisible="{Binding SuccessMsg}"/>
+          </StackPanel>
           
           <DataGrid Margin="20" 
                     ItemsSource="{Binding Products}" 
                     AutoGenerateColumns="False"
                     IsReadOnly="False"
+                    Height="500"
                     GridLinesVisibility="All"
                     BorderThickness="1" 
-                    BorderBrush="Gray">
+                    BorderBrush="Gray"
+                    >
+              <i:Interaction.Behaviors>
+                  <core:EventTriggerBehavior EventName="RowEditEnded">
+                      <!-- <core:InvokeCommandAction Command="{Binding SaveProductUpdateCommand}" CommandParameter="{Binding $eventArgs}" /> -->
+                  </core:EventTriggerBehavior>
+              </i:Interaction.Behaviors>
               <DataGrid.Columns>
                   <DataGridTextColumn Header="ID" Binding="{Binding  Id}" IsReadOnly="True"/>
                   <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
@@ -32,7 +45,8 @@
                   <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
                   <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0:C}'}"/>
               </DataGrid.Columns>
-          </DataGrid>    
+          </DataGrid>   
+          
       </StackPanel>  
     
 </UserControl>

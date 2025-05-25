@@ -83,3 +83,6 @@
 /Users/abderahman/RiderProjects/StockManager/StockManager/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
 /Users/abderahman/RiderProjects/StockManager/StockManager/bin/Debug/net9.0/Npgsql.dll
 /Users/abderahman/RiderProjects/StockManager/StockManager/bin/Debug/net9.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/abderahman/RiderProjects/StockManager/StockManager/bin/Debug/net9.0/Avalonia.Xaml.Interactions.dll
+/Users/abderahman/RiderProjects/StockManager/StockManager/bin/Debug/net9.0/Avalonia.Xaml.Interactivity.dll
+/Users/abderahman/RiderProjects/StockManager/StockManager/bin/Debug/net9.0/CsvHelper.dll

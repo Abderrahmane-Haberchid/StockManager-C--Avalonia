@@ -23,7 +23,10 @@
 /Users/abderahman/.nuget/packages/avalonia.win32/11.3.0/lib/net8.0/Avalonia.Win32.Automation.dll
 /Users/abderahman/.nuget/packages/avalonia.win32/11.3.0/lib/net8.0/Avalonia.Win32.dll
 /Users/abderahman/.nuget/packages/avalonia.x11/11.3.0/lib/net8.0/Avalonia.X11.dll
+/Users/abderahman/.nuget/packages/avalonia.xaml.interactions/11.3.0/lib/net8.0/Avalonia.Xaml.Interactions.dll
+/Users/abderahman/.nuget/packages/avalonia.xaml.interactivity/11.3.0/lib/net8.0/Avalonia.Xaml.Interactivity.dll
 /Users/abderahman/.nuget/packages/communitytoolkit.mvvm/8.2.1/lib/net6.0/CommunityToolkit.Mvvm.dll
+/Users/abderahman/.nuget/packages/csvhelper/33.0.1/lib/net8.0/CsvHelper.dll
 /Users/abderahman/.nuget/packages/harfbuzzsharp/7.3.0.3/lib/net6.0/HarfBuzzSharp.dll
 /Users/abderahman/.nuget/packages/linqkit.core/1.2.8/lib/netstandard2.1/LinqKit.Core.dll
 /Users/abderahman/.nuget/packages/linqkit.microsoft.entityframeworkcore/9.0.8/lib/net9.0/LinqKit.Microsoft.EntityFrameworkCore.dll

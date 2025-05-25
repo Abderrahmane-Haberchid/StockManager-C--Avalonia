@@ -13,6 +13,9 @@ public partial class ProduitsViewModel : ViewModelBase
     public int Quantity { get; set; }
     public double Price { get; set; }
     public string Category { get; set; }
+
+    [ObservableProperty]
+    private bool _successMsg;
     
     [ObservableProperty]
     private StockViewModel _stockViewModel;
@@ -36,5 +39,7 @@ public partial class ProduitsViewModel : ViewModelBase
         Console.WriteLine("Product added" + _dbContext.SaveChanges());
         // Force UI update if needed
         OnPropertyChanged(nameof(StockViewModel));
+        
+        SuccessMsg = true;
     }
 }

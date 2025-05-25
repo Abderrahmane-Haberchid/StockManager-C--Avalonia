@@ -23,7 +23,7 @@
                PaneBackground="#1e1e1e"
                >
         <SplitView.Pane>
-            <StackPanel>
+            <StackPanel VerticalAlignment="Stretch">
                 <Button Content="Menu" Command="{Binding OnIsPaneOpenChanged}" />
                  
                     <ListBox ItemsSource="{Binding ListItemTemplates}" 

@@ -68,9 +68,21 @@
               "target": "Package",
               "version": "[11.3.0, )"
             },
+            "Avalonia.Xaml.Interactions": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Avalonia.Xaml.Interactivity": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.2.1, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
             },
             "LinqKit.Microsoft.EntityFrameworkCore": {
               "target": "Package",
