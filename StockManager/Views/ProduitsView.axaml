@@ -54,7 +54,7 @@
                   Height="30"  
                   HorizontalContentAlignment="Center"
                   VerticalContentAlignment="Center"
-                  Command="{Binding A}"/>
+                  Command="{Binding AddProductCommand}"/>
           
     </StackPanel>
     

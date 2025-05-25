@@ -66,3 +66,4 @@
 /Users/abderahman/RiderProjects/StockManager/StockManager/obj/Debug/net9.0/StockManager.genruntimeconfig.cache
 /Users/abderahman/RiderProjects/StockManager/StockManager/obj/Debug/net9.0/ref/StockManager.dll
 /Users/abderahman/RiderProjects/StockManager/StockManager/bin/Debug/net9.0/Avalonia.Controls.DataGrid.dll
+/Users/abderahman/RiderProjects/StockManager/StockManager/obj/Debug/net9.0/StockManager.sourcelink.json

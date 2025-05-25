@@ -8,7 +8,7 @@ namespace StockManager.ViewModels;
 
 public partial class StockViewModel : ViewModelBase
 {
-    public ObservableCollection<Product> Products { get; }
+    public ObservableCollection<Product> Products { get; set; }
     
     public StockViewModel()
     {
