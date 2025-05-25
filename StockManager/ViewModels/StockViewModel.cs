@@ -1,30 +1,30 @@
  
 
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using StockManager.Records;
+using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.EntityFrameworkCore;
+using StockManager.dbConfig;
+using StockManager.entitys;
 
 namespace StockManager.ViewModels;
 
 public partial class StockViewModel : ViewModelBase
 {
-    public ObservableCollection<Product> Products { get; set; }
+    [ObservableProperty] 
+    private ObservableCollection<Product> _products = new();
+    
+    private AppDbContext _dbContext;
     
     public StockViewModel()
     {
-        var products = new List<Product>
-        {
-            new Product(1, "tv sumsung", Category.TV, 11, 3400),
-            new Product(1, "tv sumsung", Category.TV, 10, 1550),
-            new Product(1, "tv sumsung", Category.TV, 10, 1550),
-            new Product(1, "tv sumsung", Category.TV, 10, 1550),
-            new Product(1, "tv sumsung", Category.TV, 10, 1550),
-            new Product(1, "tv sumsung", Category.TV, 10, 1550),
-            new Product(1, "tv sumsung", Category.TV, 10, 1550)
-        };
-            Products = new ObservableCollection<Product>(products);
+       _dbContext = new AppDbContext();
+        LoadProducts();    
     }
-    
+
+    private async void LoadProducts()
+    {
+       Products = new ObservableCollection<Product>(await _dbContext.Products.ToListAsync());
+    }
    
     
 }
