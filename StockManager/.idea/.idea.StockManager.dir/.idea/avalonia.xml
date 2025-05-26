@@ -6,6 +6,7 @@
         <entry key="Views/MainWindow.axaml" value="StockManager.csproj" />
         <entry key="Views/ProduitsView.axaml" value="StockManager.csproj" />
         <entry key="Views/StockView.axaml" value="StockManager.csproj" />
+        <entry key="Views/VentesView.axaml" value="StockManager.csproj" />
       </map>
     </option>
   </component>

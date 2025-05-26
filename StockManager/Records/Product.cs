@@ -11,7 +11,7 @@ public partial class Product : ObservableObject
     private string _name = string.Empty;
     
     [ObservableProperty]
-    private Category _category;
+    private string _category;
     
     [ObservableProperty]
     private int _qte;
@@ -19,7 +19,7 @@ public partial class Product : ObservableObject
     [ObservableProperty]
     private double _prix;
 
-    public Product(int id, string name, Category category, int qte, double prix)
+    public Product(int id, string name, string category, int qte, double prix)
     {
         Id = id;
         Name = name;
