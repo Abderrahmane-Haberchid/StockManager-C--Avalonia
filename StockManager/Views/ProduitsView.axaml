@@ -17,10 +17,6 @@
           <StackPanel  HorizontalAlignment="Left">
               <TextBlock Text="Nom produit" Margin="0 10" />
               <TextBox Text="{Binding ProductName}" Watermark="Nom du produit..." Width="400" />
-              <TextBlock 
-                  Text="Ce champs est obligatoire"
-                  Foreground="Red"
-                  IsVisible="{Binding ProductName}" />
           </StackPanel>
           
           <StackPanel Orientation="Vertical">
@@ -34,11 +30,6 @@
                   <ComboBoxItem>Frégidaire</ComboBoxItem>
                   <ComboBoxItem>Micro-onde</ComboBoxItem>
               </ComboBox>
-              
-              <TextBlock 
-                  Text="Ce champs est obligatoire"
-                  Foreground="Red"
-                  IsVisible="{Binding Category}" />
           </StackPanel>
         
           
@@ -47,20 +38,11 @@
                   <TextBlock Text="Prix" Margin="0 10" />
                   <TextBox Text="{Binding Price}" Watermark="Prix..." Width="180"></TextBox>
                   
-                  <TextBlock 
-                      Text="Ce champs est obligatoire"
-                      Foreground="Red"
-                      IsVisible="{Binding Price}" />
               </StackPanel>
               
               <StackPanel>
                   <TextBlock Text="Quantité" Margin="0 10" />
                   <TextBox Text="{Binding Quantity}" Watermark="Quantité..." Width="180" />
-                  
-                  <TextBlock 
-                      Text="Ce champs est obligatoire"
-                      Foreground="Red"
-                      IsVisible="{Binding Quantity}" />
               </StackPanel>
               
           </StackPanel>
@@ -74,7 +56,7 @@
                   HorizontalContentAlignment="Center"
                   VerticalContentAlignment="Center"
                   Command="{Binding AddProductCommand}"/>
-          <TextBlock Text="Product Added Successfully" IsVisible="{Binding SuccessMsg}" Foreground="Green" />
+          <TextBlock Text="{Binding Msg}" Foreground="{Binding MsgColor}" />
     </StackPanel>
     
 </UserControl>

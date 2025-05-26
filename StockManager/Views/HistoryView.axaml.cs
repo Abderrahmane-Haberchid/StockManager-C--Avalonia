@@ -5,11 +5,11 @@ using StockManager.ViewModels;
 
 namespace StockManager.Views;
 
-public partial class FacturesView : UserControl
+public partial class HistoryView : UserControl
 {
-    public FacturesView()
+    public HistoryView()
     {
         InitializeComponent();
-        DataContext = new FacturesViewModel();
+        DataContext = new HistoryViewModel();
     }
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using StockManager.dbConfig;
+using StockManager.Dto;
 using StockManager.entitys;
+using StockManager.Models;
 
 namespace StockManager.ViewModels;
 
@@ -15,31 +17,39 @@ public partial class ProduitsViewModel : ViewModelBase
     public string Category { get; set; }
 
     [ObservableProperty]
-    private bool _successMsg;
+    private string _msg = string.Empty;
+    
+    [ObservableProperty]
+    private string _msgColor = string.Empty;
     
     [ObservableProperty]
     private StockViewModel _stockViewModel;
-
-    private AppDbContext _dbContext;
+    
+    // Dependency injection
+    private ProductDto _productDto;
+    private readonly ProduitsService _produitsService;
     public ProduitsViewModel()
     {
         _stockViewModel = new StockViewModel();
-        _dbContext = new AppDbContext();
+        _produitsService = new ProduitsService();
     }
 
     
     [RelayCommand]
     private void AddProduct()
     {
-        if (ProductName == "" || Quantity == 0 || Price == 0 || Category == null) return;
+        if (ProductName == "" || Quantity == 0 || Price == 0 || Category == null)
+        {
+            Msg = "Merci de remplir tous les champs!";
+            MsgColor = "Red";
+            return;
+        }
+        _productDto = new ProductDto(ProductName, Quantity, Price,Category);
         
-        _dbContext.Products.Add( new Product(ProductName, Price, Quantity, Category));
-        _dbContext.SaveChanges();
+       _produitsService.AddProduct(_productDto);
 
-        Console.WriteLine("Product added" + _dbContext.SaveChanges());
-        // Force UI update if needed
-        OnPropertyChanged(nameof(StockViewModel));
+        Msg = "Produit ajouté au stock!";
+        MsgColor = "Green";
         
-        SuccessMsg = true;
     }
 }

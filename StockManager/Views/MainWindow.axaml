@@ -2,11 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:StockManager.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="StockManager.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
+        Width="1100"
+        Height="900"
         Title="StockManager">
 
     <Design.DataContext>
@@ -20,26 +20,34 @@
                OpenPaneLength="200"
                CompactPaneLength="50"
                DisplayMode="CompactInline"
-               PaneBackground="#1e1e1e"
+               
                >
         <SplitView.Pane>
-            <StackPanel VerticalAlignment="Stretch">
-                <Button Content="Menu" Command="{Binding OnIsPaneOpenChanged}" />
-                 
+            <Grid>
+            <StackPanel VerticalAlignment="Center" Spacing="40">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Command="{Binding OnIsPaneOpenChanged}">
+                        <Image Source="../Assets/menu/burger.png" Width="20" Height="20" />
+                    </Button>
+                </StackPanel>
                     <ListBox ItemsSource="{Binding ListItemTemplates}" 
-                             SelectedItem="{Binding SelectedListItem}">
+                             SelectedItem="{Binding SelectedListItem}"
+                             Background="Transparent">
                          <ListBox.ItemTemplate>
                             <DataTemplate DataType="{x:Type vm:ListItemTemplate}">
-                                <StackPanel Spacing="30" Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Label}" />
+                                <StackPanel Spacing="40" Orientation="Horizontal">
+                                    <PathIcon Data="{Binding ListItemIcon}" />
+                                    <TextBlock Text="{Binding Label}" FontSize="16" FontWeight="DemiBold" />
                                 </StackPanel>
                             </DataTemplate>  
                              
                          </ListBox.ItemTemplate>
                     </ListBox>
-                <Button Content="Quitter" CornerRadius="15" VerticalAlignment="Bottom" />            
+                <Button CornerRadius="15" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <PathIcon Data="{StaticResource exit}" />
+                </Button>
             </StackPanel>
-            
+            </Grid>
         </SplitView.Pane>
         
         <SplitView.Content>

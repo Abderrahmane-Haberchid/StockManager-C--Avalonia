@@ -24,7 +24,10 @@ build_property.EnableCodeStyleSeverity =
 [/Users/abderahman/RiderProjects/StockManager/StockManager/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/abderahman/RiderProjects/StockManager/StockManager/Views/FacturesView.axaml]
+[/Users/abderahman/RiderProjects/StockManager/StockManager/Assets/menu/Icons.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/abderahman/RiderProjects/StockManager/StockManager/Views/HistoryView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/abderahman/RiderProjects/StockManager/StockManager/Views/MainWindow.axaml]
