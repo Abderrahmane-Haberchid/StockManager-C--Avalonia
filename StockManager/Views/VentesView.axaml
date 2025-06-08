@@ -1,0 +1,50 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:StockManager.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="viewModels:VentesViewModel"
+             x:Class="StockManager.Views.VentesView">
+    
+    <Design.DataContext>
+        <viewModels:VentesViewModel/>
+    </Design.DataContext>
+    
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+        <TextBlock Text="Ajouter une Vente" FontSize="20" FontWeight="DemiBold" Margin="0 30 0 0" />
+        <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black" Padding="20" Margin="0 30"> 
+            <StackPanel Orientation="Horizontal" Spacing="20">
+                <TextBox Watermark="Article ID..." Text="{Binding ArticleId}" Width="200"/>
+                <Button Content="Search" Command="{Binding SearchCommand}" CommandParameter="{Binding ArticleId}" />
+            </StackPanel>
+        </Border>
+        
+        <StackPanel Orientation="Vertical" Spacing="20">
+            <TextBlock Text="Détail du produit:" FontSize="15" FontWeight="DemiBold" />
+            <TextBlock Text="Nom du produit:" />
+            <TextBox FontSize="18" Foreground="white" Text="{Binding  ProductName}" IsEnabled="False" />
+            <TextBlock Text="Catégorie:" />
+            <TextBox FontSize="18" Foreground="white" Text="{Binding Category}" IsEnabled="False" />
+            <TextBlock Text="Prix:" />
+            <TextBox FontSize="18" Foreground="white" Text="{Binding Price}" IsEnabled="False" />
+            <TextBlock Text="Quantité:" />
+            <TextBox Watermark="Quantity..." Text="{Binding Quantity}" />
+            <TextBlock Text="Nom du client:" />
+            <TextBox Watermark="Cutomer name" Text="{Binding CustomerName}" />
+            
+            <TextBlock Text="{Binding Message}" Foreground="{Binding MessageColor}" />
+            
+            <Button Content="Valider Vente" Command="{Binding AddSaleCommand}" />
+            <StackPanel Orientation="Horizontal" Spacing="20">
+                <Button Content="Imprimer Facture PDF" 
+                        IsVisible="{Binding PrintInvoice}" 
+                        Command="{Binding PrintPDFCommand}" />
+                <Button Content="Imprimer Facture Excel"
+                        IsVisible="{Binding PrintInvoice}"
+                        Command="{Binding PrintExcelCommand}"/>  
+            </StackPanel>
+            <TextBlock Text="{Binding PrintingPdf}" Foreground="Green" />  
+        </StackPanel>
+    </StackPanel>
+</UserControl>

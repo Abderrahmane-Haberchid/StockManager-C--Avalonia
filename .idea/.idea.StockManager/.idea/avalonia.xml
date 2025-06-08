@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="StockManager/App.axaml" value="StockManager/StockManager.csproj" />
+        <entry key="StockManager/Views/FacturesView.axaml" value="StockManager/StockManager.csproj" />
+        <entry key="StockManager/Views/MainWindow.axaml" value="StockManager/StockManager.csproj" />
+        <entry key="StockManager/Views/ProduitsView.axaml" value="StockManager/StockManager.csproj" />
+        <entry key="StockManager/Views/StockView.axaml" value="StockManager/StockManager.csproj" />
+        <entry key="StockManager/Views/VentesView.axaml" value="StockManager/StockManager.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

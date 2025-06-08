@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:StockManager.ViewModels"
+             xmlns:i="using:Avalonia.Xaml.Interactivity"         
+             xmlns:core="using:Avalonia.Xaml.Interactions.Core"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="350"
+             x:DataType="viewModels:StockViewModel"
+             x:Class="StockManager.Views.StockView">
+    
+    <Design.DataContext>
+            <viewModels:StockViewModel/>
+    </Design.DataContext>
+    
+      <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+          <StackPanel Orientation="Horizontal" Margin="0 20" HorizontalAlignment="Center" Spacing="50"> 
+              <TextBlock Text="{Binding ProductsDto.Count, StringFormat='Produits ({0})'}"
+                         FontSize="20"
+                         FontWeight="Bold"
+                         Margin="0 20"/>
+          
+              <Button Content="Export to CSV" Foreground="DarkCyan" FontSize="15" FontWeight="DemiBold" Command="{Binding ExportToCSVCommand}" />
+              <Button Content="Export to Excel" Foreground="NavajoWhite" Background="DarkCyan" FontSize="15" FontWeight="DemiBold" Command="{Binding ExportToExcelCommand}" />
+              <TextBlock Text="Data Exported..." Foreground="Green" IsVisible="{Binding SuccessMsg}"/>
+          </StackPanel>
+          
+          <StackPanel Orientation="Horizontal" Spacing="20" Margin="20 20 0 20">
+              
+              <TextBox Watermark="Chercher produit..." Width="200" Text="{Binding Query}" />
+              <Button Content="Chercher" 
+                      Command="{Binding ChercherProduitCommand}" 
+                      CommandParameter="{Binding Query}"/>
+              <Button Command="{Binding LoadProductsCommand}" CornerRadius="30">
+                  <PathIcon Data="{StaticResource reload}" />
+              </Button>
+              
+          </StackPanel>
+          
+          <DataGrid Margin="20" 
+                    ItemsSource="{Binding ProductsDto}" 
+                    AutoGenerateColumns="False"
+                    IsReadOnly="False"
+                    Height="500"
+                    GridLinesVisibility="All"
+                    BorderThickness="1" 
+                    BorderBrush="Gray"
+                    >
+              <i:Interaction.Behaviors>
+                  <core:EventTriggerBehavior EventName="RowEditEnded">
+                      <!-- <core:InvokeCommandAction Command="{Binding SaveProductUpdateCommand}" CommandParameter="{Binding $eventArgs}" /> -->
+                  </core:EventTriggerBehavior>
+              </i:Interaction.Behaviors>
+              <DataGrid.Columns>
+                  <DataGridTextColumn Header="ID" Binding="{Binding  Id}" IsReadOnly="True"/>
+                  <DataGridTextColumn Header="Name" Binding="{Binding ProductName}"/>
+                  <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
+                  <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+                  <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0:C}'}"/>
+              </DataGrid.Columns>
+          </DataGrid>   
+          
+      </StackPanel>  
+    
+</UserControl>

@@ -1,0 +1,34 @@
+# Fichiers et dossiers d'artefacts de build .NET/C#
+bin/
+obj/
+*.nupkg
+*.pdb
+*.suo
+*.user
+.vs/
+
+# Dépendances et outils spécifiques
+Dependencies/imports/
+Dependencies/.NET 9.0/
+
+# Dossier d'actifs générés ou temporaires
+Assets/ # Si ce dossier contient des fichiers temporaires ou générés
+
+# Dossiers d'exportation de l'application
+Export/
+
+# Fichiers et dossiers liés aux IDE (Visual Studio, JetBrains Rider, etc.)
+.idea/                 # Pour Rider/IntelliJ IDEA
+*.csproj.user
+*.sln.user
+Scratches and Console/ # Les dossiers de "scratch" de certains IDE
+Extensions/            # Ce pourrait être des extensions d'IDE ou de projets
+
+# Fichiers de logs et temporaires
+*.log
+*.tmp
+*.bak
+
+# Fichiers spécifiques au système d'exploitation
+.DS_Store              # macOS
+Thumbs.db              # Windows
